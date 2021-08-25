@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Loading The Bootstrap Library -->
+    <link rel="stylesheet"
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity=
+"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+
+    <!-- Loading Icons From Font Awesome -->
+    <link rel="stylesheet"
+          href=
+"https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity=
+"sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+
+    <!-- Linking Your CSS File -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- Loading Roboto Font from Google Fonts -->
+    <link href=
+"https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+          rel="stylesheet">
+
+    <!-- Loading Open Sans Font from Google Fonts -->
+    <link href=
+"https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+          rel="stylesheet">
+
+
+  </head>
+
+  <body id="body">
+    <div>
+      <link rel="stylesheet" href="styles.css">
+
+    <!-- Quote Box -->
+    <div class="block text-center">
+
+      <!-- Front part of the Quote Box -->
+    <div class = "quote-box block__main block__front">
+
+      <!-- Quote to be Displayed Here -->
+      <span class = "quote">
+
+        <!-- Hyphen is Displayed  -->
+        <i class="fas fa-2x fa-quote-left"></i>
+
+        <!-- Quote Text -->
+        <span class = "text">
+        Quote To be Displayed Here
+        </span>
+
+      </span>
+
+      <!-- Author to be Displayed Here -->
+      <div class = "author">
+        Author to be Displayed Here
+      </div>
+      <a  class = "new-quote btn btn-default"
+          onclick="newQuote()">New Quote</a>
+    </div>
+
+    <!-- Back Part of the Quote Box -->
+    <div class = "quote-box block__main block__back">
+
+      <!-- Quote to be Displayed Here -->
+      <span class = "quote">
+
+        <!-- Hyphen is Displayed  -->
+        <i class="fas fa-2x fa-quote-left"></i>
+
+        <!-- Quote Text -->
+        <span class = "text">
+        Quote To be Displayed Here
+        </span>
+
+      </span>
+
+      <!-- Author to be Displayed Here -->
+      <div class = "author">
+        Author to be Displayed Here
+      </div>
+        <!-- Button -->
+        <a  class = "new-quote btn btn-default "
+            onclick="newQuote()">New Quote</a>
+    </div>
+  </div>
+</div>
+
+  <!-- Linking Your JavaScript File -->
+  <script src="script.js"></script>
+  </body>
+  <script>function generateRandomNumber(num) {
+    // Gets # from 0 -> num - 1
+    return Math.floor(Math.random() * num)
+  }
+
+  const collectiveWisdom = {
+    signInfo: ['star', 'moon', 'sun', 'comet'],
+    fortuneOutput: ['terrible luck', 'bad luck', 'ok luck', 'good luck', 'great luck'],
+    advice: ['go out and eat', 'not read this', 'play more', 'trust no one']
+  }
+
+  // Store the 'wisdom' in an array
+  let personalWisdom = []
+
+  // Iterate over the object
+  for(let prop in collectiveWisdom) {
+    let optionIdx = generateRandomNumber(collectiveWisdom[prop].length)
+
+    // use the object's properties to customize the message being added to personalWisdom
+    switch(prop) {
+      case 'signInfo':
+        personalWisdom.push(`Your sign right now is a "${collectiveWisdom[prop][optionIdx]}".`)
+        break
+      case 'fortuneOutput':
+        personalWisdom.push(`You are having: "${collectiveWisdom[prop][optionIdx]}".`)
+        break
+      case 'advice':
+        personalWisdom.push(`You should: "${collectiveWisdom[prop][optionIdx]}".`)
+        break
+      default:
+        personalWisdom.push('There is not enough info.')
+    }
+  }
+
+  function formatWisdom(wisdom) {
+    // Add some ASCII here?
+    // Add in more symbols to the array? like emojies or what not?
+    const formatted = personalWisdom.join('\n')
+    console.log(formatted)
+  }
+
+  formatWisdom(personalWisdom);</script>
+
+
+</html>
